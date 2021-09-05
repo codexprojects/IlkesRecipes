@@ -1,5 +1,5 @@
 //
-//  RemoteRecipeLoaderAPI.swift
+//  RemoteRecipeLoader.swift
 //  MarleySpoonChallengeIlke
 //
 //  Created by Ilke Yucel on 5.09.2021.
@@ -8,13 +8,8 @@
 import Foundation
 import Contentful
 
-typealias RecipesCompletion = (Result<[Recipe], Error>) -> Void
-
-protocol RemoteRecipeLoaderAPIProtocol {
-    func fetchAllRecipes(completion: @escaping RecipesCompletion)
-}
-
-final class RemoteRecipeLoaderAPI {
+public final class RemoteRecipeLoader: RecipeLoader {
+    
     let contentTypeClasses: [EntryDecodable.Type] = [
         Recipe.self,
         Chef.self,
@@ -27,13 +22,18 @@ final class RemoteRecipeLoaderAPI {
                       accessToken: contentfulApi.accessToken,
                       contentTypeClasses: contentTypeClasses)
     }()
+    
 }
 
-extension RemoteRecipeLoaderAPI: RemoteRecipeLoaderAPIProtocol {
-    func fetchAllRecipes(completion: @escaping RecipesCompletion){
+extension RemoteRecipeLoader {
+    
+    func loadAllRecipes(completion: @escaping LoadReceipeResult){
         let query = QueryOn<Recipe>.where(contentTypeId: "recipe")
 
-        client.fetchArray(of: Recipe.self, matching: query) { result in
+        client.fetchArray(of: Recipe.self, matching: query) { [weak self] result in
+            
+            guard self != nil else { return }
+            
             switch result {
             case .success(let entriesArrayResponse):
                 let recipes = entriesArrayResponse.items
@@ -43,4 +43,5 @@ extension RemoteRecipeLoaderAPI: RemoteRecipeLoaderAPIProtocol {
             }
         }
     }
+    
 }
