@@ -16,6 +16,10 @@
 		4162366926E4BB510029D272 /* ContentfulAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162366826E4BB510029D272 /* ContentfulAPI.swift */; };
 		4162367026E4C06C0029D272 /* ListRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162366F26E4C06C0029D272 /* ListRecipes.swift */; };
 		4162367326E4C7A30029D272 /* ListRecipesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162367226E4C7A30029D272 /* ListRecipesUseCaseTests.swift */; };
+		4162367626E4D2CA0029D272 /* Chef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162367526E4D2CA0029D272 /* Chef.swift */; };
+		4162367826E4D2D40029D272 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162367726E4D2D40029D272 /* Recipe.swift */; };
+		4162367A26E4D2DE0029D272 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162367926E4D2DE0029D272 /* Tag.swift */; };
+		4162368626E4D8F50029D272 /* RemoteRecipeLoaderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162368526E4D8F50029D272 /* RemoteRecipeLoaderAPI.swift */; };
 		64769F006E8E44F09C9C99F1 /* Pods_MarleySpoonChallengeIlkeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E3188BBF94815E856EFC1C /* Pods_MarleySpoonChallengeIlkeTests.framework */; };
 		BE2A7A27BF80C6DFDA902E99 /* Pods_MarleySpoonChallengeIlke_MarleySpoonChallengeIlkeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDB0D37D7F2A03CC92823BB /* Pods_MarleySpoonChallengeIlke_MarleySpoonChallengeIlkeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +56,10 @@
 		4162366826E4BB510029D272 /* ContentfulAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfulAPI.swift; sourceTree = "<group>"; };
 		4162366F26E4C06C0029D272 /* ListRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipes.swift; sourceTree = "<group>"; };
 		4162367226E4C7A30029D272 /* ListRecipesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipesUseCaseTests.swift; sourceTree = "<group>"; };
+		4162367526E4D2CA0029D272 /* Chef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chef.swift; sourceTree = "<group>"; };
+		4162367726E4D2D40029D272 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		4162367926E4D2DE0029D272 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		4162368526E4D8F50029D272 /* RemoteRecipeLoaderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRecipeLoaderAPI.swift; sourceTree = "<group>"; };
 		41645899F030DA69EE6AC6ED /* Pods-MarleySpoonChallengeIlkeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarleySpoonChallengeIlkeTests.debug.xcconfig"; path = "Target Support Files/Pods-MarleySpoonChallengeIlkeTests/Pods-MarleySpoonChallengeIlkeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		65307852D607FE3D1516DAE1 /* Pods-MarleySpoonChallengeIlke-MarleySpoonChallengeIlkeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarleySpoonChallengeIlke-MarleySpoonChallengeIlkeUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarleySpoonChallengeIlke-MarleySpoonChallengeIlkeUITests/Pods-MarleySpoonChallengeIlke-MarleySpoonChallengeIlkeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8016FD72BE536CFBA1E217B1 /* Pods_MarleySpoonChallengeIlke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarleySpoonChallengeIlke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +128,7 @@
 				4162366A26E4BEFB0029D272 /* ListRecipesModule */,
 				4162366B26E4BF090029D272 /* DetailRecipeModule */,
 				4162366726E4BAF40029D272 /* Network API */,
+				4162367426E4D2A80029D272 /* Entities */,
 				4162367126E4C4B10029D272 /* Support Files */,
 			);
 			path = MarleySpoonChallengeIlke;
@@ -147,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				4162366826E4BB510029D272 /* ContentfulAPI.swift */,
+				4162368526E4D8F50029D272 /* RemoteRecipeLoaderAPI.swift */,
 			);
 			path = "Network API";
 			sourceTree = "<group>";
@@ -183,6 +193,16 @@
 				4111D38D26DE43A800479764 /* Info.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		4162367426E4D2A80029D272 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4162367526E4D2CA0029D272 /* Chef.swift */,
+				4162367726E4D2D40029D272 /* Recipe.swift */,
+				4162367926E4D2DE0029D272 /* Tag.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		961289C4F01B7DFD12AF7EFF /* Frameworks */ = {
@@ -449,6 +469,10 @@
 				4162366926E4BB510029D272 /* ContentfulAPI.swift in Sources */,
 				4162367026E4C06C0029D272 /* ListRecipes.swift in Sources */,
 				4111D38026DE43A400479764 /* AppDelegate.swift in Sources */,
+				4162367A26E4D2DE0029D272 /* Tag.swift in Sources */,
+				4162367826E4D2D40029D272 /* Recipe.swift in Sources */,
+				4162367626E4D2CA0029D272 /* Chef.swift in Sources */,
+				4162368626E4D8F50029D272 /* RemoteRecipeLoaderAPI.swift in Sources */,
 				4111D38226DE43A400479764 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
