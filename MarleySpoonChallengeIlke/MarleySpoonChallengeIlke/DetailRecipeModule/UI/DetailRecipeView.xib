@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-5m-JC8">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="294" width="414" height="602"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eg7-HN-xwE">
                         <size key="itemSize" width="128" height="128"/>
@@ -26,19 +26,19 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fNC-wk-kEd">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="250"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="omo-GN-liQ"/>
+                        <constraint firstAttribute="height" constant="250" id="omo-GN-liQ"/>
                     </constraints>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="LQN-tc-evb"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="bUi-5m-JC8" firstAttribute="top" secondItem="9jx-gv-TI7" secondAttribute="top" id="2hK-60-XlM"/>
-                <constraint firstItem="fNC-wk-kEd" firstAttribute="top" secondItem="9jx-gv-TI7" secondAttribute="top" id="64j-xv-6eb"/>
+                <constraint firstItem="fNC-wk-kEd" firstAttribute="top" secondItem="LQN-tc-evb" secondAttribute="top" id="4Mf-rA-cA3"/>
                 <constraint firstItem="bUi-5m-JC8" firstAttribute="leading" secondItem="LQN-tc-evb" secondAttribute="leading" id="9B6-ea-vfn"/>
                 <constraint firstItem="bUi-5m-JC8" firstAttribute="trailing" secondItem="LQN-tc-evb" secondAttribute="trailing" id="BGN-RQ-Apr"/>
+                <constraint firstItem="bUi-5m-JC8" firstAttribute="top" secondItem="fNC-wk-kEd" secondAttribute="bottom" id="BGd-5S-Kqf"/>
                 <constraint firstItem="fNC-wk-kEd" firstAttribute="trailing" secondItem="LQN-tc-evb" secondAttribute="trailing" id="Ew9-Qq-dhV"/>
                 <constraint firstItem="fNC-wk-kEd" firstAttribute="leading" secondItem="LQN-tc-evb" secondAttribute="leading" id="GAf-o9-oku"/>
                 <constraint firstAttribute="bottom" secondItem="bUi-5m-JC8" secondAttribute="bottom" id="Oqy-2V-BdV"/>

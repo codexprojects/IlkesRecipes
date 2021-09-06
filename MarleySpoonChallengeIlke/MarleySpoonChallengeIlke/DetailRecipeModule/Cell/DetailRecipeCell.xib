@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailRecipeCell" id="rWh-o2-7td" customClass="DetailRecipeCell" customModule="MarleySpoonChallengeIlke" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="263" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="peP-Vy-454">
+                <rect key="frame" x="0.0" y="0.0" width="263" height="77"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhc-3x-chp">
+                        <rect key="frame" x="8" y="8" width="247" height="61"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Vhc-3x-chp" secondAttribute="trailing" constant="8" id="1Vn-xe-YfJ"/>
+                    <constraint firstItem="Vhc-3x-chp" firstAttribute="top" secondItem="peP-Vy-454" secondAttribute="top" constant="8" id="OSy-4q-7Yb"/>
+                    <constraint firstAttribute="bottom" secondItem="Vhc-3x-chp" secondAttribute="bottom" constant="8" id="YzC-nE-vsh"/>
+                    <constraint firstItem="Vhc-3x-chp" firstAttribute="leading" secondItem="peP-Vy-454" secondAttribute="leading" constant="8" id="pqf-Ir-ekO"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="304" height="91"/>
+            <connections>
+                <outlet property="textLabel" destination="Vhc-3x-chp" id="K2B-0I-a59"/>
+            </connections>
+            <point key="canvasLocation" x="394.92753623188406" y="120.20089285714285"/>
+        </collectionViewCell>
+    </objects>
+</document>
