@@ -10,6 +10,8 @@ import Contentful
 
 public final class RemoteRecipeLoader: RecipeLoader {
     
+    private let queryString: String
+    
     let contentTypeClasses: [EntryDecodable.Type] = [
         Recipe.self,
         Chef.self,
@@ -23,12 +25,15 @@ public final class RemoteRecipeLoader: RecipeLoader {
                       contentTypeClasses: contentTypeClasses)
     }()
     
+    public init(queryString: String) {
+        self.queryString = queryString
+    }
 }
 
 extension RemoteRecipeLoader {
     
-    func loadAllRecipes(completion: @escaping LoadReceipeResult){
-        let query = QueryOn<Recipe>.where(contentTypeId: "recipe")
+    public func loadAllRecipes(completion: @escaping LoadReceipeResult){
+        let query = QueryOn<Recipe>.where(contentTypeId: queryString)
 
         client.fetchArray(of: Recipe.self, matching: query) { [weak self] result in
             

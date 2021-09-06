@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias LoadReceipeResult = (Result<[Recipe], Error>) -> Void
+public typealias LoadReceipeResult = (Result<[Recipe], Error>) -> Void
 
 protocol RecipeLoader {
     func loadAllRecipes(completion: @escaping LoadReceipeResult)

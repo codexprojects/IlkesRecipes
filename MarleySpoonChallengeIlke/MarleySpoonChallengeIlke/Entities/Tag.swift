@@ -10,7 +10,7 @@ import Contentful
 
 final class Tag: EntryDecodable, FieldKeysQueryable {
     
-    static let contentTypeId: String = "tag"
+    static let contentTypeId: String = ContentTypeQuery.tag.rawValue
     
     let id: String
     let localeCode: String?

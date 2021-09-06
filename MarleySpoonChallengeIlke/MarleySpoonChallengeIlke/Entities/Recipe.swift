@@ -8,14 +8,14 @@
 import Foundation
 import Contentful
 
-final class Recipe: EntryDecodable, FieldKeysQueryable {
+public class Recipe: EntryDecodable, FieldKeysQueryable {
     
-    static let contentTypeId: String = "recipe"
+    public static let contentTypeId: String = ContentTypeQuery.recipe.rawValue
     
-    let id: String
-    let localeCode: String?
-    let updatedAt: Date?
-    let createdAt: Date?
+    public let id: String
+    public let localeCode: String?
+    public let updatedAt: Date?
+    public let createdAt: Date?
     
     let title: String?
     let description: String?
@@ -50,7 +50,7 @@ final class Recipe: EntryDecodable, FieldKeysQueryable {
         }
     }
     
-    enum FieldKeys: String, CodingKey {
+    public enum FieldKeys: String, CodingKey {
         case title, description, photo, chef, tags
     }
 }

@@ -10,7 +10,7 @@ import Contentful
 
 final class Chef: EntryDecodable, FieldKeysQueryable {
 
-    static let contentTypeId: String = "chef"
+    static let contentTypeId: String = ContentTypeQuery.chef.rawValue
 
     let id: String
     let localeCode: String?

@@ -18,7 +18,7 @@ class ListRecipesViewModel: ListRecipes {
    
     var listRecipeView: ListRecipeView?
     
-    init(remoteRecipeLoader: RecipeLoader = RemoteRecipeLoader()) {
+    init(remoteRecipeLoader: RecipeLoader = RemoteRecipeLoader(queryString: ContentTypeQuery.recipe.rawValue)) {
         self.remoteRecipeLoader = remoteRecipeLoader
     }
     
@@ -27,7 +27,7 @@ class ListRecipesViewModel: ListRecipes {
     }
     
     internal func loadRecipes() {
-        remoteRecipeLoader.loadAllRecipes { [weak self] result in
+        remoteRecipeLoader.loadAllRecipes() { [weak self] result in
             
             guard let self = self else { return }
             
