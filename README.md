@@ -17,3 +17,7 @@ There are 2 views:
   - List of Tags
   - Description
   - Chef Name
+
+This project uses Cocapods for 3rd party frameworks:
+- Contentful
+- KingFisher
