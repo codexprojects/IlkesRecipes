@@ -5,7 +5,6 @@
 //  Created by Ilke Yucel on 5.09.2021.
 //
 
-import Foundation
 import UIKit
 
 class ListRecipesViewController: UIViewController {
@@ -20,17 +19,17 @@ class ListRecipesViewController: UIViewController {
     }
 
     private var viewModel: ListRecipesViewModel?
-    
+  
     override func loadView() {
         super.loadView()
         self.viewModel?.setupView()
         self.view = self.viewModel?.listRecipeView
-       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("welcome to recipes list")
+        
+        setupUI()
         receipesLoadAction()
         viewModel?.viewDidLoad()
     }
@@ -38,13 +37,46 @@ class ListRecipesViewController: UIViewController {
     private func receipesLoadAction(){
         viewModel?.loadSuccess = { [weak self] in
             self?.viewModel?.listRecipeView?.hideLoading()
-            print(self?.viewModel?.recipeItemModel(at: IndexPath(row: 0, section: 0)).title)
+            self?.viewModel?.reloadTableView()
         }
         
         viewModel?.loadFailed = { [weak self] (message) in
             self?.viewModel?.listRecipeView?.hideLoading()
-            print(message)
+            self?.showAlert("Error", message: message)
         }
     }
+    
+    private func setupUI() {
+        title = "Recipes List"
+        self.viewModel?.listRecipeView?.tableView.delegate = self
+        self.viewModel?.listRecipeView?.tableView.dataSource = self
+        self.viewModel?.listRecipeView?.tableView.rowHeight = 300
+        self.viewModel?.listRecipeView?.tableView.tableFooterView = UIView()
+    }
    
+}
+
+// MARK: - TableView Delegate and DataSource
+
+extension ListRecipesViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.numberOfItems() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: ListRecipeTableViewCell.reuseIdentifier, for: indexPath) as? ListRecipeTableViewCell {
+            cell.updateCell(with: viewModel?.recipeItemModel(at: indexPath))
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let viewModel = viewModel else { return }
+        navigationController?.pushViewController(viewModel.gotoRecipeDetail(for: indexPath), animated: true)
+        
+    }
 }

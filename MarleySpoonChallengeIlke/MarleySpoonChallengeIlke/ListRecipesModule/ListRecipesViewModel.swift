@@ -54,4 +54,14 @@ class ListRecipesViewModel: ListRecipes {
     func recipeItemModel(at indexPath: IndexPath) -> RecipeCellModel {
         return RecipeCellModel(recipe: recipesList[indexPath.item])
     }
+    
+    func reloadTableView() {
+        listRecipeView?.tableView.reloadData()
+    }
+    
+    func gotoRecipeDetail(for indexPath: IndexPath) -> DetailRecipeViewController {
+        
+        let viewModel = DetailRecipeViewModel(recipe: recipesList[indexPath.item])
+        return DetailRecipeViewController.init(viewModel: viewModel)
+    }
 }

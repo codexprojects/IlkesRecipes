@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9jx-gv-TI7" customClass="DetailRecipeView" customModule="MarleySpoonChallengeIlke" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-5m-JC8">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eg7-HN-xwE">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fNC-wk-kEd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="omo-GN-liQ"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="LQN-tc-evb"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bUi-5m-JC8" firstAttribute="top" secondItem="9jx-gv-TI7" secondAttribute="top" id="2hK-60-XlM"/>
+                <constraint firstItem="fNC-wk-kEd" firstAttribute="top" secondItem="9jx-gv-TI7" secondAttribute="top" id="64j-xv-6eb"/>
+                <constraint firstItem="bUi-5m-JC8" firstAttribute="leading" secondItem="LQN-tc-evb" secondAttribute="leading" id="9B6-ea-vfn"/>
+                <constraint firstItem="bUi-5m-JC8" firstAttribute="trailing" secondItem="LQN-tc-evb" secondAttribute="trailing" id="BGN-RQ-Apr"/>
+                <constraint firstItem="fNC-wk-kEd" firstAttribute="trailing" secondItem="LQN-tc-evb" secondAttribute="trailing" id="Ew9-Qq-dhV"/>
+                <constraint firstItem="fNC-wk-kEd" firstAttribute="leading" secondItem="LQN-tc-evb" secondAttribute="leading" id="GAf-o9-oku"/>
+                <constraint firstAttribute="bottom" secondItem="bUi-5m-JC8" secondAttribute="bottom" id="Oqy-2V-BdV"/>
+            </constraints>
+            <connections>
+                <outlet property="recipeDetailsCollectionView" destination="bUi-5m-JC8" id="bVj-oG-AKI"/>
+                <outlet property="recipeImage" destination="fNC-wk-kEd" id="Fb2-tm-kSm"/>
+            </connections>
+            <point key="canvasLocation" x="318.84057971014494" y="70.982142857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

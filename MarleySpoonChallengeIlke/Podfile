@@ -6,7 +6,8 @@ target 'MarleySpoonChallengeIlke' do
   use_frameworks!
 
   # Pods for MarleySpoonChallengeIlke
-  pod 'Contentful', '~> 5.0.0'
+  pod 'Contentful', '~> 5.0.0' , :inhibit_warnings => true
+  pod 'Kingfisher' , :inhibit_warnings => true
 
   target 'MarleySpoonChallengeIlkeTests' do
     inherit! :search_paths
